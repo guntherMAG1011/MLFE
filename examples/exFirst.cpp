@@ -1,9 +1,12 @@
 #include <iostream>
+#include <vector>
 
 #include "lafe/structure.hpp"
-#include "GLFW/glfw3.h"
 
 int main() {
-	std::cout << "Hello Sivaram!" << '\n';
+	std::vector<int> v = { 1, 2, 3, 4 };
+	LAFECPP::Vector<int> vec1(v);
+	std::cout << "Dimension of the vector: " << vec1.getDimension() << '\n';
+	std::cout << "Magnitude of the vector: " << vec1.getMagnitude() << '\n';
 	return 0;
 }

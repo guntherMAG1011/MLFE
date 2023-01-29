@@ -1,7 +1,7 @@
 # Build Libraries
 
 set (LAFE_SOURCE_FILES
-	matrixOps.cpp
+	operations.cpp
 )
 
 add_library (lafe ${LAFE_SOURCE_FILES})
