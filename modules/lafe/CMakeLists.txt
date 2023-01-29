@@ -7,4 +7,4 @@ set (LAFE_SOURCE_FILES
 add_library (lafe ${LAFE_SOURCE_FILES})
 
 target_include_directories (lafe PUBLIC ${PROJECT_SOURCE_DIR}/include)
-target_link_libraries(lafe glfw)
+# target_link_libraries(lafe glfw)

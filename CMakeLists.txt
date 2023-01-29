@@ -5,11 +5,11 @@ project ("MLFE" VERSION 0.1.0)
 set (CMAKE_CXX_STANDARD 17)
 
 # Options
-option (GIT_SUBMODULE "Check submodules during build" ON)
-option (BUILD_GLFW "build glfw" ON)
+option (GIT_SUBMODULE "Check submodules during build" OFF)
+option (BUILD_GLFW "build glfw" OFF)
 option (BUILD_LAFE_LIBRARY "build lafe library" ON)
 option (BUILD_EXAMPLES "build examples" ON)
-option (BUILD_TESTS "build tests" ON)
+option (BUILD_TESTS "build tests" OFF)
 
 # Update submodules as needed
 find_package (Git QUIET)
