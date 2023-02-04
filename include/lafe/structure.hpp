@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <string>
 #include <cmath>
 
 namespace LAFECPP {
@@ -11,8 +12,10 @@ namespace LAFECPP {
 		size_t dimension;
 		float magnitude;
 	public:
+		static_assert(!std::is_same_v<T, char>);
+		static_assert(!std::is_same_v<T, std::string>);
 		// Constructor
-		Vector(std::vector<T> list) {
+		Vector(const std::vector<T> &list) {
 			magnitude = 0;
 			for (int i = 0; i < list.size(); i++) {
 				coordinates.push_back(list[i]);
