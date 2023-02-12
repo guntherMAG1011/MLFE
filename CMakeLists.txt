@@ -6,10 +6,9 @@ set (CMAKE_CXX_STANDARD 17)
 
 # Options
 option (GIT_SUBMODULE "Check submodules during build" OFF)
-option (BUILD_GLFW "build glfw" OFF)
+#option (BUILD_GLFW "build glfw" OFF)
 option (BUILD_LAFE_LIBRARY "build lafe library" ON)
 option (BUILD_EXAMPLES "build examples" ON)
-option (BUILD_TESTS "build tests" OFF)
 
 # Update submodules as needed
 find_package (Git QUIET)
@@ -27,28 +26,16 @@ endif()
 
 # Include sub-projects.
 # Build GLFW
-if(NOT EXISTS "${PROJECT_SOURCE_DIR}/3rdparty/glfw/CMakeLists.txt")
-    message (FATAL_ERROR "The submodules were not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
-endif()
-message (STATUS "BUILD_GLFW option is ${BUILD_GLFW}")
-if(BUILD_GLFW)
-    set (GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
-    set (GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-    set (GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-    add_subdirectory (3rdparty/glfw)
-endif()
-
-# Build Googletest
-message (STATUS "BUILD_TESTS option is ${BUILD_TESTS}")
-if(BUILD_TESTS)
-    enable_testing ()
-    if(NOT EXISTS "${PROJECT_SOURCE_DIR}/3rdparty/googletest/CMakeLists.txt")
-        message (FATAL_ERROR "The submodules were not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
-    endif()
-    # For Windows: Prevent overriding the parent project's compiler/linker settings
-    set (gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-    add_subdirectory (3rdparty/googletest)
-endif()
+#if(NOT EXISTS "${PROJECT_SOURCE_DIR}/3rdparty/glfw/CMakeLists.txt")
+#    message (FATAL_ERROR "The submodules were not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
+#endif()
+#message (STATUS "BUILD_GLFW option is ${BUILD_GLFW}")
+#if(BUILD_GLFW)
+#    set (GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+#    set (GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+#    set (GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+#    add_subdirectory (3rdparty/glfw)
+#endif()
 
 # Build LAFE library
 message (STATUS "BUILD_LAFE_LIBRARY option is ${BUILD_LAFE_LIBRARY}")
@@ -60,9 +47,4 @@ endif()
 message (STATUS "BUILD_EXAMPLES option is ${BUILD_EXAMPLES}")
 if(BUILD_EXAMPLES)
     add_subdirectory ("examples")
-endif()
-
-# Build tests
-if(BUILD_TESTS)
-    add_subdirectory ("tests")
 endif()
