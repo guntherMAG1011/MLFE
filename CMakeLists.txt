@@ -9,13 +9,13 @@ if (POLICY CMP0074)     # Policy to search packages at <package_name>_ROOT dir
 endif()
 
 # Options
-option (BUILD_LAFE_LIBRARY "build lafe library" ON)
+option (BUILD_GLFE_LIBRARY "build glfe library" ON)
 option (BUILD_EXAMPLES "build examples" ON)
 
 # Build LAFE library
-message (STATUS "BUILD_LAFE_LIBRARY option is ${BUILD_LAFE_LIBRARY}")
-if(BUILD_LAFE_LIBRARY)
-    add_subdirectory ("modules/lafe")
+message (STATUS "BUILD_GLFE_LIBRARY option is ${BUILD_GLFE_LIBRARY}")
+if(BUILD_GLFE_LIBRARY)
+    add_subdirectory ("modules/glfe")
 endif()
 
 # Build examples
