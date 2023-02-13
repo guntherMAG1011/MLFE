@@ -1,9 +1,15 @@
 # MLFE
 MLFE is a machine learning library written in cpp.
-MLFE contains multiple modules, LAFE being one for linear algebra.
+MLFE contains multiple modules, GLFE being one for Graphics.
 
-## Dependencies
-[GLFW](https://www.glfw.org/docs/latest/compile_guide.html#compile_deps_x11) Dependencies for X11 on Unix-like systems.
-```bash
-sudo apt install xorg-dev
-```
+# Dependencies
+## Graphics Library [GLFE]
+### Intel oneAPI Math Kernel Library [MKL].
+- Windows:
+  - Download the exe from Intel website and install it.
+### Boost.
+- Windows:
+  - Install and create BOOST_ROOT env variable so cmake find_package can find the package.
+### Blaze Math Library.
+- Windows:
+  - Install and create BLAZE_ROOT env variable so cmake find_package can find the package.

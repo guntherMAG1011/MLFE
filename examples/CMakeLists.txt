@@ -2,4 +2,4 @@
 
 add_executable (exFirst exFirst.cpp)
 
-target_link_libraries(exFirst PRIVATE lafe)
+target_link_libraries(exFirst PRIVATE glfe)
